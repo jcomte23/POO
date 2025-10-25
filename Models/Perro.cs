@@ -29,6 +29,24 @@ public class Perro
         Edad = DateTime.Now.Year - FechaDeNacimiento.Year;
     }
 
+    public void MostrarInformacion()
+    {
+        Console.WriteLine("──────────────────────────────────────────────");
+        Console.WriteLine($"🐾 Información del Perro #{Id}");
+        Console.WriteLine("──────────────────────────────────────────────");
+        Console.ResetColor();
+
+        Console.WriteLine($"📛 Nombre: {Nombre}");
+        Console.WriteLine($"🐕 Raza: {Raza}");
+        Console.WriteLine($"🎂 Fecha de nacimiento: {FechaDeNacimiento:dd/MM/yyyy}");
+        Console.WriteLine($"📅 Edad: {Edad} año{(Edad != 1 ? "s" : "")}");
+        Console.WriteLine($"🎨 Color: {Color}");
+        Console.WriteLine($"📏 Tamaño: {Tamaño}");
+        Console.WriteLine($"⚧ Género: {(Genero ? "Macho" : "Hembra")}");
+        Console.WriteLine("──────────────────────────────────────────────");
+        Console.WriteLine();
+    }
+    
     public void Hablar()
     {
         Console.WriteLine("El perro dice Wauf");
