@@ -100,4 +100,32 @@ public class PerrosViews
         Console.ReadKey();
         Console.Clear();
     }
+    
+    public static void ListarPerros()
+    {
+        try
+        {
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("══════════════════════════════════════════════");
+            Console.WriteLine("🐶 PERROS REGISTRADOS EN EL SISTEMA");
+            Console.WriteLine("══════════════════════════════════════════════");
+            Console.ResetColor();
+
+            foreach (var perro in Database.Perros)
+            {
+                perro.MostrarInformacion();
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine($"❌ Ha ocurrido un error inesperado: {ex.Message}");
+            Console.ResetColor();
+        }
+
+        Console.WriteLine("Presione una tecla para volver al menú principal...");
+        Console.ReadKey();
+        Console.Clear();
+    }
 }

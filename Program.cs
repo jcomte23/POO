@@ -12,7 +12,8 @@ while (true)
     Console.WriteLine("══════════════════════════════════════════════");
     Console.ResetColor();
     Console.WriteLine("1. Registrar nuevo perro");
-    Console.WriteLine("2. Salir");
+    Console.WriteLine("2. Mostrar a todos los perros");
+    Console.WriteLine("0. Salir");
     Console.Write("👉 Seleccione una opción: ");
     string opcion = Console.ReadLine() ?? "";
 
@@ -21,8 +22,12 @@ while (true)
         case "1":
             PerrosViews.RegistrarPerro();
             break;
-
+        
         case "2":
+            PerrosViews.ListarPerros();
+            break;
+
+        case "0":
             Console.WriteLine("\n👋 ¡Hasta luego!");
             return;
 
